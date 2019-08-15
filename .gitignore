@@ -376,3 +376,4 @@ Thumbs.db
 /config/*
 **/src/environments/*
 **/src/assets/i18n/*
+**/public/*

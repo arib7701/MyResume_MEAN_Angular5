@@ -8,12 +8,12 @@
     "start": "node app"
   },
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
     "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "mongoose": "^5.6.9",
     "nodemailer": "*",
-    "nodemailer-smtp-transport": "*",
-    "cors": "*"
+    "nodemailer-smtp-transport": "*"
   },
   "author": "Amandine Ribot",
   "license": "ISC"
