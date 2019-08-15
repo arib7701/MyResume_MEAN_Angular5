@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
-const config = require('./config/database');
+const config = require('../config/database');
 
 //Parameters
 const user_name = config.user_name;
