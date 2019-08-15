@@ -1,0 +1,39 @@
+<div class="container workview">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+                <li><a [routerLink]="['/']">{{'HomeLink' | translate}}</a></li>
+                <li class="active">{{'WorkLink' | translate}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row row-content">
+        <div *ngFor="let work of works">
+            <div *ngIf="lang ==  'en' && work.type == 'en' || lang == 'fr' && work.type == 'fr'" class="col-sm-12 work timeline">
+                <ul>
+                    <li class="list clearfix">
+                        <div class="badge"><i>{{work.endingDate}}</i></div>
+                        <div class="timeline-panel">
+                            <div class="col-sm-2  col-xs-6 timeline-heading">
+                                <img src={{work.logo}} alt="work_company_logo">
+                            </div>
+                            <div class="col-sm-9 col-xs-12 timeline-body">
+                                <h3>{{work.name}} - <small><span  *ngIf="work.country != undefined" class="label label-info">{{work.country}} - {{work.town}} {{work.state}}</span></small></h3>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-9">
+                                        <p>{{work.startingDate}} - {{work.endingDate}}</p>
+                                        <p><a href="{{work.url}}" target="_blank">{{work.url}}</a></p>
+                                        <b>{{'Work.Description' | translate}}</b>
+                                        <p>{{work.descriptions[0]}}</p>
+                                        <a [routerLink]="['/works', work._id]">{{'Work.SeeDetail' | translate}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    

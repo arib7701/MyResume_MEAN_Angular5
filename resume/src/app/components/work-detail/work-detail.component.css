@@ -1,0 +1,85 @@
+html, body {
+    width: auto!important; 
+    overflow-x: hidden!important;
+    margin-left: 0px;
+    margin-right: 0px;
+} 
+
+.workDetail img {
+    width: 100%;
+}
+.workDetail{
+    padding-top: 40px;
+ }
+
+.goBackBtn{
+    margin-right: 10px;
+    float: right;
+}
+
+.frame{
+    list-style-type: none !important;
+    margin-bottom: 30px;
+    zoom: 0.75; 
+    -moz-transform: scale(0.75); 
+    -moz-transform-origin: 0 0;
+    height:550px;
+    overflow: scroll;
+}
+
+.jobdetail {
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    padding: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+
+.label-purple{
+    background-color: purple !important;
+ }
+
+ @media screen and (max-width: 699px) and (min-width: 300px) {
+    .workDetail img{
+        width: 80%;
+    }
+
+    .workDetail{
+        margin-left: 10px;
+        margin-right: 10px;
+     }
+
+    .logoWork{
+        float: right;
+    }    
+
+    .work{
+        margin-top: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .centerText{
+        text-align: center;
+    }
+
+    .jobdetail {
+        padding: 10px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+
+
+
+    .col-xs-12 {
+        width: 97%;
+    }
+
+
+    .frame{
+        height: auto;
+    }
+}

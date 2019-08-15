@@ -1,0 +1,55 @@
+<div class="container contactview">
+    <div class="row">
+        <div class="col-xs-12">
+           <ul class="breadcrumb">
+               <li><a [routerLink]="['/']">{{'HomeLink' | translate}}</a></li>
+               <li class="active">{{'ContactLink' | translate}}</li>
+           </ul>
+        </div>
+    </div>
+    <div class="row row-content">
+       <div class="col-xs-10 col-xs-offset-1">
+          <h3>{{'Contacts.FormTitle' | translate}}</h3> 
+       </div>
+         <div class="col-xs-10 col-xs-offset-1 col-sm-9">              
+            <form class="form-horizontal" name="messageForm" (submit)="sendMessageSubmit()">
+                  <div class="form-group">
+                    <mat-form-field class="col-xs-10">
+                        <input type="text" matInput class="form-control" name="firstName" placeholder="{{'Contacts.FirstNamePlaceholder' | translate}}"
+                    [(ngModel)]="firstName" required>
+                    </mat-form-field>  
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="col-xs-10">
+                        <input type="text" matInput class="form-control"  name="lastName" placeholder="{{'Contacts.LastNamePlaceholder' | translate}}"
+                        [(ngModel)]="lastName" required>
+                    </mat-form-field>
+                </div>
+               <div class="form-group">
+                    <mat-form-field class="col-xs-10">
+                        <input type="tel" matInput class="form-control" name="phone" placeholder="{{'Contacts.PhonePlaceholder' | translate}}"
+                        [(ngModel)]="phone">
+                    </mat-form-field>
+                </div>
+                 <div class="form-group">
+                    <mat-form-field class="col-xs-10">
+                        <input type="email" matInput class="form-control" name="email" placeholder="{{'Contacts.EmailPlaceholder' | translate}}"
+                        [(ngModel)]="email" required>
+                    </mat-form-field>
+                </div>                    
+                <div class="form-group">
+                    <mat-form-field class="col-xs-10" >
+                        <textarea class="form-control" matInput cdkAutosizeTextarea rows="8" [(ngModel)]="mess" name="mess" placeholder="{{'Contacts.MessPlaceholder' | translate}}" required>
+                        </textarea>
+                    </mat-form-field>
+                </div>  
+                <div class="form-group">
+                    <div class="col-xm-10">
+                        <button mat-raised-button type="submit" class="btn btn-primary" ng-disabled="messageForm.$invalid">{{'Contacts.SendButton' | translate}}</button>
+                    </div>
+                </div>
+            </form>
+            <flash-messages></flash-messages>
+        </div>
+   </div>
+</div>

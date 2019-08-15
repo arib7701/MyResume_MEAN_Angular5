@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row row-content workDetail clearFix">
+      <a class="goBackBtn" [routerLink]="['/works']"><button mat-raised-button class="btn btn-default">{{'WorkDetail.GoBackButton' | translate}}</button></a>
+       <div class="col-sm-12 work">
+         <div class="row">
+                  <div class="col-sm-2  col-xs-6 logoWork">
+                       <img alt="work_company_logo" src={{work.logo}}>
+                  </div>
+                  <div class="col-sm-10 col-xs-12">
+                    <h3 class="centerText">{{work.name}} - <small><span  *ngIf="work.country != undefined" class="label label-info">{{work.country}} - {{work.town}} {{work.state}}</span></small></h3>
+                    <h5 class="centerText"><a href="{{work.urls[0].details[0]}}" target="blank">{{work.urls[0].details[0].adress}}</a></h5>
+                     <div class="row">
+                       <div class="col-xs-12 col-md-12">
+                         <p class="centerText">{{work.startingDate}} - {{work.endingDate}}</p>
+                         <p *ngIf="work.hours != undefined"><b>{{'WorkDetail.Hours' | translate}} </b>{{work.hours}}</p>
+                         <div class="row">
+                           <div class="col-xs-12 col-md-4 jobdetail">
+                             <b><span class="label label-primary">{{'WorkDetail.DetailLabel' | translate}}</span></b>
+                             <ul>
+                               <li *ngFor="let desc of work.descriptions">{{desc}}</li>
+                             </ul>
+                           </div>
+                           <div class="col-xs-12 col-md-3  jobdetail">
+                             <b><span class="label label-success">{{'WorkDetail.TechnoLabel' | translate}} </span></b>
+                             <ul>
+                               <li *ngFor="let tech of work.technologies">{{tech}}</li>
+                             </ul>
+                           </div>
+                           <div class="col-xs-12 col-md-3 jobdetail">
+                             <b><span class="label label-purple">{{'WorkDetail.SkillLabel' | translate}} </span></b>
+                             <ul>
+                               <li *ngFor="let skill of work.skills">{{skill}}</li>
+                             </ul>
+                           </div>
+                         </div>
+                     </div>
+                   </div>
+               </div>
+              </div>
+              <hr>
+              <div class="row">
+                <ul *ngFor="let url of work.urls">
+                  <div *ngFor="let detail of url.details |slice:1">
+                  <li class="col-md-6 col-xs-12 frame">
+                      <h3><a href="{{detail.adress}}" target="blank">{{detail.name}}</a></h3>
+                      <div *ngIf="detail.frame == undefined" class="col-xs-12">
+                          <img src="{{detail.screenshot}}"/> 
+                      </div>
+                      <div *ngIf="detail.frame != undefined" class="col-xs-12 embed-responsive embed-responsive-16by9">
+                          <iframe [src]="detail.frame | safepipe"></iframe>
+                      </div>
+                    <div *ngIf="detail.screenshotsAndroid != undefined">
+                      <div *ngFor="let screen of detail.screenshotsAndroid" class="col-xs-3" >
+                        <img src="{{screen}}"/>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row" *ngIf="detail.features != undefined">
+                      <div class="col-md-12">
+                        <h5><u>{{'WorkDetail.Features' | translate}}</u></h5>
+                        <ul>
+                          <li *ngFor="let feature of detail.features">{{feature}}</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  </div>
+                  <br/>
+              </ul>
+              </div>
+          </div>
+      </div>
+  </div>

@@ -1,0 +1,11 @@
+.home img{
+	width: 100%;
+}
+
+@media screen and (max-width: 699px) and (min-width: 300px) {
+
+    .container{
+        margin-right:10px;
+        margin-left: 10px;
+     }
+}

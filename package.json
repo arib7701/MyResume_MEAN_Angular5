@@ -1,0 +1,20 @@
+{
+  "name": "a2-resume",
+  "version": "1.0.0",
+  "description": "Resume using Angular2",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "body-parser": "*",
+    "nodemailer": "*",
+    "nodemailer-smtp-transport": "*",
+    "cors": "*"
+  },
+  "author": "Amandine Ribot",
+  "license": "ISC"
+}

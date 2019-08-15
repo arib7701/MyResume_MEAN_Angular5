@@ -1,0 +1,107 @@
+<div class="container skillview">
+  <div class="row">
+      <div class="col-xs-12">
+         <ul class="breadcrumb">
+             <li><a [routerLink]="['/']">{{'HomeLink' | translate}}</a></li>
+             <li class="active">{{'SkillLink' | translate}}</li>
+         </ul>
+      </div>
+  </div>
+  <div class="row row-content">
+   <mat-toolbar class="skilltype">{{'Skills.ITTitle' | translate}}</mat-toolbar>
+   <div class="col-md-4">
+           <table class="table table-condensed table-hover">
+               <tr>
+                 <th>{{'Skills.WebSubtitle' | translate}}</th>
+               </tr>
+            <div *ngFor="let skill of skills">
+              <tr *ngIf="skill.type == 'IT' &&  skill.subtype == 'Web development'">
+                  <td class="firstcol"><span class="label label-success">{{skill.name}}</span></td>
+                  <td><ngb-rating [(rate)]="skill.level" [readonly]="readonly"></ngb-rating></td>
+              </tr>
+          </div>
+        </table>
+      </div>
+      <div class="col-md-4">
+        <table class="table table-condensed table-hover">
+               <tr>
+                 <th>{{'Skills.ProgSubtitle' | translate}}</th>
+               </tr>
+            <div *ngFor="let skill of skills">   
+              <tr *ngIf="skill.type == 'IT' &&  skill.subtype == 'Programming'">
+                  <td class="firstcol"><span class="label label-primary">{{skill.name}}</span></td>
+                  <td><ngb-rating class="stars" [(rate)]="skill.level" [readonly]="readonly"></ngb-rating></td>
+                </tr>
+            </div>
+        </table>
+      </div>
+      <div class="col-md-4">
+        <table class="table table-condensed table-hover">
+               <tr>
+                 <th>{{'Skills.DBSubtitle' | translate}}</th>
+               </tr>
+            <div *ngFor="let skill of skills">
+              <tr *ngIf="skill.type == 'IT' &&  skill.subtype == 'Database'">
+                  <td class="firstcol"><span class="label label-warning">{{skill.name}}</span></td>
+                  <td><ngb-rating [(rate)]="skill.level" [readonly]="readonly"></ngb-rating></td>
+            </div>
+        </table>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-4">
+        <table class="table table-condensed table-hover">
+               <tr>
+                 <th>{{'Skills.IDESubtitle' | translate}}</th>
+               </tr>
+            <div *ngFor="let skill of skills">
+              <tr *ngIf="skill.type == 'IT' &&  skill.subtype == 'IDE'">
+                  <td class="firstcol"><span class="label label-default">{{skill.name}}</span></td>
+                  <td><ngb-rating [(rate)]="skill.level" [readonly]="readonly"></ngb-rating></td>
+              </tr>
+            </div>
+        </table>
+      </div>
+      <div class="col-md-4">
+        <table class="table table-condensed table-hover">
+               <tr>
+                 <th>{{'Skills.OtherSubtitle' | translate}}</th>
+               </tr>
+            <div *ngFor="let skill of skills">
+              <tr *ngIf="skill.type == 'IT' &&  skill.subtype == 'Others'">
+                  <td class="firstcol"><span class="label label-info">{{skill.name}}</span></td>
+                  <td><ngb-rating [(rate)]="skill.level" [readonly]="readonly"></ngb-rating></td>
+              </tr>
+            </div>
+        </table>
+      </div>
+  </div>
+  <div class="row">
+    <mat-toolbar class="skilltype">{{'Skills.PersonalTitle' | translate}}</mat-toolbar>
+     <div class="col-md-4">
+        <table class="table table-condensed table-hover">
+               <tr>
+                 <th>{{'Skills.SoftSubtitle' | translate}}</th>
+               </tr>
+            <div *ngFor="let skill of skills">
+              <tr *ngIf="skill.type == 'Personal' &&  skill.subtype == 'Soft' && skill.lang =='en'">
+                  <td class="firstcol"><span class="label label-purple">{{skill.name}}</span></td>
+                  <td><ngb-rating [(rate)]="skill.level" [readonly]="readonly"></ngb-rating></td>
+              </tr>
+            </div>
+        </table>
+      </div>
+       <div class="col-md-4">
+        <table class="table table-condensed table-hover">
+               <tr>
+                 <th>{{'Skills.LangSubtitle' | translate}}</th>
+               </tr>
+            <div *ngFor="let skill of skills">
+              <tr *ngIf="skill.type == 'Personal' &&  skill.subtype == 'Language' && skill.lang == 'en'">
+                  <td class="firstcol"><span class="label label-danger">{{skill.name}}</span></td>
+                  <td><ngb-rating [(rate)]="skill.level" [readonly]="readonly"></ngb-rating></td>
+            </div>
+        </table>
+      </div>
+  </div>
+</div>

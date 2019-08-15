@@ -1,0 +1,20 @@
+.skillview{
+    padding-top: 40px;
+ }
+
+.firstcol{
+    width: 160px;
+}
+
+.label-purple{
+    background-color: purple !important;
+ }
+
+
+ @media screen and (max-width: 699px) and (min-width: 300px) {
+
+    .skillview{
+        margin-right:10px;
+        margin-left: 10px;
+     }
+}

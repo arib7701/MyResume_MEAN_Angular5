@@ -1,0 +1,64 @@
+<div class="container eduview">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+                <li><a [routerLink]="['/']">{{'HomeLink' | translate}}</a></li>
+                <li class="active">{{'EduLink' | translate}}</li>
+            </ul>
+        </div>
+    </div>
+      <div class="row row-content">
+        <div *ngFor="let edu of edus">
+          <div *ngIf="lang ==  'en' && edu.type == 'en' || lang == 'fr' && edu.type == 'fr'" class="col-sm-12 edu timeline">
+             <ul>
+                 <li class="list clearfix">
+                     <div class="badge"><i>{{edu.endingDate}}</i></div>
+                     <div class="timeline-panel">
+                        <div class="col-sm-2 col-xs-5 timeline-heading">
+                             <img src={{edu.logo}} alt="edu_logo">
+                        </div>
+                        <div class="col-sm-9 col-xs-7 timeline-body">
+                            <h3>{{edu.schoolname}} <small><span class="label label-info">{{edu.country}} - {{edu.state}} {{edu.town}}</span></small></h3>
+                         <div class="row">
+                           <div class="col-xs-12 col-md-4" >
+                             <p class="diploma">{{edu.level}} - {{edu.diploma}}</p>
+                             <p>{{edu.startingDate}} - {{edu.endingDate}}</p>
+                             <p><a href="{{edu.url}}" target="blank">{{edu.url}}</a></p>
+                           </div>
+                           <div class="col-md-8 tablist-large">
+                              <mat-tab-group>
+                                  <mat-tab label="{{'Edu.ClassTab' | translate}}">
+                                      <ul>
+                                          <li *ngFor="let class of edu.classes">{{class}}</li>
+                                      </ul>
+                                  </mat-tab>
+                                  <mat-tab label="{{'Edu.ProjTab' | translate}}" *ngIf="edu.projects.length">
+                                      <ul *ngFor="let project of edu.projects">
+                                          <li class="tabProject" *ngFor="let detail of project.details">{{detail.name}} <small *ngFor="let tech of detail.technologies"><span class="label label-success" >{{tech}}</span> </small><a href="{{detail.url}}" target="blank">{{detail.url}}</a></li>
+                                      </ul>
+                                  </mat-tab>
+                              </mat-tab-group>
+                           </div>
+                         </div>
+                        </div>
+                        <div class="col-xs-12 tablist-small">
+                            <mat-tab-group>
+                                <mat-tab label="{{'Edu.ClassTab' | translate}}">
+                                    <ul>
+                                        <li *ngFor="let class of edu.classes">{{class}}</li>
+                                    </ul>
+                                </mat-tab>
+                                <mat-tab label="{{'Edu.ProjTab' | translate}}" *ngIf="edu.projects.length">
+                                    <ul *ngFor="let project of edu.projects">
+                                        <li class="tabProject" *ngFor="let detail of project.details">{{detail.name}} <small *ngFor="let tech of detail.technologies"><span class="label label-success" >{{tech}}</span> </small><a href="{{detail.url}}" target="blank">{{detail.url}}</a></li>
+                                    </ul>
+                                </mat-tab>
+                            </mat-tab-group>
+                       </div>
+                    </div>
+                  </li>
+            </ul>
+          </div>
+        </div> 
+      </div>
+  </div>   
