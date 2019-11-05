@@ -11,7 +11,7 @@
     "body-parser": "*",
     "cors": "*",
     "express": "*",
-    "mongoose": "^5.6.9",
+    "mongoose": "^5.7.5",
     "nodemailer": "*",
     "nodemailer-smtp-transport": "*"
   },
